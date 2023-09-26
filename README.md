@@ -1,2 +1,3 @@
-# dotfiles
-Configs/dotfiles are managed with [chezmoi](https://chezmoi.io/).
+# Personal dotfiles
+
+All files are managed with [chezmoi](https://chezmoi.io/).
