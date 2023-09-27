@@ -229,3 +229,8 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Rofi application launcher
 bindsym $mod+d exec --no-startup-id rofi -show run
+
+# Screenshots
+set $screens_path "/tmp/screenshots"
+bindsym Print exec --no-startup-id mkdir -p $screens_path && flameshot screen --clipboard --path $screens_path
+bindsym $mod+Print exec --no-startup-id mkdir -p $screens_path && flameshot gui --clipboard --path $screens_path
