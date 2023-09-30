@@ -49,7 +49,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -189,21 +189,6 @@ bindsym $mod+r mode "resize"
 #         status_command i3status
 # }
 
-### Plasma compatibility
-for_window [title="Desktop @ QRect.*"] kill; floating enable; border none
-for_window [class="plasmashell"] floating enable
-for_window [class="Plasma"] floating enable, border none
-for_window [title="plasma-desktop"] floating enable, border none
-for_window [title="win7"] floating enable, border none
-for_window [class="krunner"] floating enable, border none
-for_window [class="Kmix"] floating enable, border none
-for_window [class="Klipper"] floating enable, border none
-for_window [class="Plasmoidviewer"] floating enable, border none
-for_window [class="(?i)*nextcloud*"] floating disable
-for_window [class="plasmashell" window_type="notification"] floating enable, border none, move right 700px, move down 450px
-no_focus [class="plasmashell" window_type="notification"]
-#####
-
 ### Gaps
 # gaps inner 8px
 ###
@@ -218,11 +203,11 @@ bindsym $mod+p move workspace to output right
 exec --no-startup-id $HOME/scripts/monitors_config
 
 # Fix workspaces 1 and 2 to the correct monitor
-workspace $ws1 output DP-0
-workspace $ws2 output HDMI-0
+workspace $ws1 output DP-3
+workspace $ws2 output HDMI-1
 
 # Desktop wallpaper
-exec_always --no-startup-id sleep 1 && feh --bg-fill $HOME/Pictures/wallpaper/howl_castle.jpg --bg-fill $HOME/Pictures/wallpaper/spirited_away.jpg
+exec_always --no-startup-id sleep 1 && feh --bg-fill $HOME/.config/wallpaper/howl_castle.jpg --bg-fill $HOME/.config/wallpaper/spirited_away.jpg
 
 # Launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh

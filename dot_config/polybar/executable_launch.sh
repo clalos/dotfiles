@@ -4,8 +4,8 @@
 # If all your bars have ipc enabled, you can use
 polybar-msg cmd quit
 
-# Run polybar for all monitors returned by xrandr
-MONITOR=DP-0 polybar --reload primary &
-MONITOR=HDMI-0 polybar --reload secondary &
+# Run polybar
+MONITOR=DP-3 polybar --reload primary &
+MONITOR=HDMI-1 polybar --reload secondary &
 
 echo "Bars launched..."
