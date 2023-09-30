@@ -154,7 +154,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -189,9 +189,9 @@ bindsym $mod+r mode "resize"
 #         status_command i3status
 # }
 
-### Gaps
-# gaps inner 8px
-###
+## Gaps
+gaps inner 8px
+##
 
 # Remove top bar but retain the focus border
 default_border pixel 5
@@ -210,10 +210,10 @@ workspace $ws2 output HDMI-1
 exec_always --no-startup-id sleep 1 && feh --bg-fill $HOME/.config/wallpaper/howl_castle.jpg --bg-fill $HOME/.config/wallpaper/spirited_away.jpg
 
 # Launch polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/cuts/launch.sh
 
 # Rofi application launcher
-bindsym $mod+d exec --no-startup-id rofi -show run
+bindsym $mod+d exec --no-startup-id rofi -no-config -no-lazy-grab -show drun -modi drun -theme ~/.config/polybar/cuts/scripts/rofi/launcher.rasi
 
 # Screenshots
 set $screens_path "/tmp/screenshots"
