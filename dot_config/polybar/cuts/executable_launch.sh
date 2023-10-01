@@ -11,5 +11,5 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 # Launch the bars on both monitors
-MONITOR=DP-3 polybar -q primary -c "$DIR"/config.ini &
-MONITOR=HDMI-1 polybar -q secondary -c "$DIR"/config.ini &
+MONITOR=DP-0 polybar -q primary -c "$DIR"/config.ini &
+MONITOR=HDMI-0 polybar -q secondary -c "$DIR"/config.ini &

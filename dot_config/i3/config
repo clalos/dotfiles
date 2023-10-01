@@ -203,8 +203,8 @@ bindsym $mod+p move workspace to output right
 exec --no-startup-id $HOME/scripts/monitors_config
 
 # Fix workspaces 1 and 2 to the correct monitor
-workspace $ws1 output DP-3
-workspace $ws2 output HDMI-1
+workspace $ws1 output DP-0
+workspace $ws2 output HDMI-0
 
 # Desktop wallpaper
 exec_always --no-startup-id sleep 1 && feh --bg-fill $HOME/.config/wallpaper/howl_castle.jpg --bg-fill $HOME/.config/wallpaper/spirited_away.jpg
