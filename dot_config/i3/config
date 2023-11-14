@@ -52,7 +52,7 @@ tiling_drag modifier titlebar
 bindsym $mod+Return exec alacritty
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec --no-startup-id dmenu_run
@@ -207,7 +207,7 @@ workspace $ws1 output DP-0
 workspace $ws2 output HDMI-0
 
 # Desktop wallpaper
-exec_always --no-startup-id sleep 1 && feh --bg-fill $HOME/.config/wallpaper/howl_castle.jpg --bg-fill $HOME/.config/wallpaper/spirited_away.jpg
+exec_always --no-startup-id sleep 1 && feh --bg-fill $HOME/.config/wallpaper/gruvbox-girl-head.png --bg-fill $HOME/.config/wallpaper/tree_portrait.jpg
 
 # Launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/cuts/launch.sh
@@ -218,7 +218,7 @@ bindsym $mod+d exec --no-startup-id rofi -no-config -no-lazy-grab -show drun -mo
 # Screenshots
 set $screens_path "/tmp/screenshots"
 bindsym Print exec --no-startup-id mkdir -p $screens_path && flameshot screen --clipboard --path $screens_path
-bindsym $mod+Print exec --no-startup-id mkdir -p $screens_path && flameshot gui --clipboard --path $screens_path
+bindsym Shift+Print exec --no-startup-id mkdir -p $screens_path && flameshot gui --clipboard --path $screens_path
 
 # Colors
 set $rosewater #f5e0dc
@@ -253,3 +253,9 @@ client.unfocused         $overlay0 $base $text  $rosewater $overlay0
 client.urgent            $peach    $base $peach $overlay0  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
