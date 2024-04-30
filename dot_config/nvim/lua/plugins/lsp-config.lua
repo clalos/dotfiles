@@ -34,7 +34,6 @@ return {
     event = { "InsertEnter", "CmdlineEnter" },
     config = function()
       local cmp = require('cmp')
-      local cmp_action = require('lsp-zero').cmp_action()
 
       cmp.setup({
         mapping = cmp.mapping.preset.insert({
@@ -64,10 +63,11 @@ return {
       lsp_zero.extend_lspconfig()
       lsp_zero.on_attach(function(_, bufnr)
         lsp_zero.default_keymaps({ buffer = bufnr })
-        local opts = { buffer = bufnr }
 
+        -- Format keymap
+        local opts = { buffer = bufnr }
         vim.keymap.set({ 'n', 'x' }, '<C-i>', function()
-          vim.lsp.buf.format({ async = false, timeout_ms = 500 })
+          require("conform").format({ bufnr = bufnr })
         end, opts)
       end)
     end
