@@ -24,7 +24,8 @@ vim.opt.scrolloff = 8
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+-- Vertical column at 80 characters
+-- vim.opt.colorcolumn = "80"
 
 -- Use system clipboard
 vim.api.nvim_set_option("clipboard", "unnamed")
@@ -39,9 +40,3 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- Half page jumps keep cursor in the center
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
-
--- Replace the hightlighted word
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
--- Make the current file executable
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })

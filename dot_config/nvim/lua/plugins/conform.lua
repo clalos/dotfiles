@@ -40,6 +40,8 @@ return {
       yaml = { "prettierd" },
       -- Zig
       zig = { "zig fmt" },
+      -- JSON
+      json = { "prettierd" },
     },
   },
   init = function()
