@@ -215,8 +215,6 @@ bindsym Shift+Print exec --no-startup-id mkdir -p $screens_path && flameshot gui
 bindsym $mod+$alt+d exec --no-startup-id autorandr --load docked-home
 bindsym $mod+$alt+m exec --no-startup-id autorandr --load mobile  
 
-# Load 
-
 # Launch polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh --cuts
 
@@ -230,7 +228,7 @@ exec --no-startup-id xfce4-power-manager --daemon
 exec --no-startup-id blueman-applet
 
 # Launch VPN
-exec --no-startup-id mullvad-vpn 
+# exec --no-startup-id mullvad-vpn 
 
 # Launch 1Password
 exec --no-startup-id 1password --silent
